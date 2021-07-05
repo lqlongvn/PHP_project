@@ -31,7 +31,8 @@ $conn->close();
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Hệ Thống Quản lý Mua Sắm VNPT-Media </title>
 	<?php 
-	echo "Hello Long, 2", "<br>";
+	echo  "<br>";
+	echo "Hello: GitHub; Just to see the Changes in GitHub; Long sửa để thấy thay đổi trên GitHub", "<br>";
 	?>
 
 	<link rel="stylesheet" href="Bootstrap/css/bootstrap.min.css" />
