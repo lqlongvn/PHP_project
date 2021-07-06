@@ -35,7 +35,7 @@
 	</head>
 	<body>
 		<div class="container">
-			<h4>DANH SÁCH GÓI THẦU</h4>
+			<h4>DANH SÁCH CÔNG VIỆC</h4>
 			<div class="row">
 				<div class="col-md-6">
 					<form action="index.php?page=search" method="POST" name="frm_search">
@@ -57,6 +57,20 @@
 							<th>Done</th>
 							<th>Date</th>
 							<th>Chú thích</th>
+							<th>Chức năng</th>							
+						</tr>
+							<td><?php echo "STT" ?></td>
+							<td><?php echo "Work" ?></td>
+							<td><?php echo "Done" ?></td>
+							<td><?php echo "Date" ?></td>
+							<td><?php echo "Chú thích" ?></td>
+							<td>
+								<button class="btn btn-info">Chi Tiết</button>
+								<button class="btn btn-primary">Sửa</button> 
+								<button class="btn btn-danger">Xóa</button>
+							</td>
+						<tr>
+							
 						</tr>
 					</thead>
 					<tbody>
