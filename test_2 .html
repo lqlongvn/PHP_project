@@ -1,0 +1,92 @@
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Quản lý To-do-list </title>
+
+	<link rel="stylesheet" href="Bootstrap/css/bootstrap.min.css" />
+	<link rel="stylesheet" href="Bootstrap/css/my_css.css">
+</head>
+
+<body>
+
+	<div class="container">
+		
+		<h4>DANH SÁCH CÔNG VIỆC</h4>
+			<div class="row">
+				<div class="col-md-6">
+					<form action="index.php?page=search" method="POST" name="frm_search">
+						<input type="text" class="form-control" name="key" placeholder="Nội dung cần tìm trong Tên Gói thầu" />
+				</div>
+				<div class="col-md-6">
+						<button class="btn btn-primary" type="submit" name="submit">Tìm kiếm theo tên</button>
+					</form>
+				</div>
+			</div>
+			<br>
+			<br>
+		<div class="row main_member">
+			<div class="col-md-12">
+				<div class="col-md-3">
+					<ul class="list-group">
+						<li class="list-group-item"><b>QUẢN TRỊ MUA SẮM </b></li>
+						<li class="list-group-item">
+							<a href="index.php">Danh sách gói thầu</a>
+						</li>
+						<li class="list-group-item">
+							<a href="index.php?page=add_member">Thêm mới gói thầu</a>
+						</li>
+					</ul>
+				</div>
+				<div class="col-md-9">
+					<div class="table-responsive">
+						<table class="table table-hover">
+							<thead>
+								<tr>
+									<th>STT</th>
+									<th>Work</th>
+									<th>Done</th>
+									<th>Date</th>
+									<th>Chú thích</th>
+									<th>Chức năng</th>							
+								</tr>
+								<td><?php echo "STT" ?></td>
+								<td><?php echo "Work" ?></td>
+								<td><?php echo "Done" ?></td>
+								<td><?php echo "Date" ?></td>
+								<td><?php echo "Chú thích" ?></td>
+								<td>
+									<button class="btn btn-info">Chi Tiết</button>
+									<button class="btn btn-primary">Sửa</button> 
+									<button class="btn btn-danger">Xóa</button>
+								</td>
+								<tr>
+
+								</tr>
+							</thead>
+							<tbody>
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- End main -->
+
+		<div class="row footer">
+			<div class="col-md-12 text-center">
+				Hệ thống Quản lý Mua Sắm VNPT-Media <br>
+				Copyright © 2019 All Rights Reserved. Phát triển bởi Ban KHĐT VNPT-Media
+			</div>
+		</div>
+
+	</div>
+	<script src="js/jquery.js"></script>
+	<script src="js/myJava.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+
+</body>
+
+
+</html>
