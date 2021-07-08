@@ -2,13 +2,14 @@
 	session_start();
 	include_once 'config/myConfig.php'; 
 
-	echo "Hello Long, this is index.php", "<br>";
+	echo "Header", "<br>";
 
 	echo "id: " . "             - Work: " . "        - Done: " . "    - Date:      " . "<br>";
 
 	$sql = "SELECT * FROM work";
 	$result = $conn->query($sql);
 
+	echo "Fetch cách 1", "<br>";
 	if ($result->num_rows > 0) {
 	    // output data of each row
 		while($row = $result->fetch_assoc()) {
@@ -17,6 +18,19 @@
 	} else {
 		echo "0 results";
 	}
+
+	echo "<br>";
+	echo "Fetch cách 2", "<br>";
+	$query = mysqli_query($conn, $sql); // câu lênh truy vấn
+	$count = mysqli_num_rows($query); // đếm xem có bao nhiêu bản ghi trả ra
+	if ($count > 0) {
+		echo  "Số dòng: ".$count; 
+		while ($row = mysqli_fetch_array($query)) { 
+			echo "id: " . $row["id"]. " - Work: " . $row["work_content"]. "- Done: " . $row["done_content"]." - Date:  " . $row["work_date"]. "<br>";
+		}
+
+	}
+
 	$conn->close();
 
 	?>
@@ -40,8 +54,8 @@
 				<div class="col-md-6">
 					<form action="index.php?page=search" method="POST" name="frm_search">
 						<input type="text" class="form-control" name="key" placeholder="Nội dung cần tìm trong Tên Gói thầu" />
-				</div>
-				<div class="col-md-6">
+					</div>
+					<div class="col-md-6">
 						<button class="btn btn-primary" type="submit" name="submit">Tìm kiếm theo tên</button>
 					</form>
 				</div>
@@ -59,16 +73,16 @@
 							<th>Chú thích</th>
 							<th>Chức năng</th>							
 						</tr>
-							<td><?php echo "STT" ?></td>
-							<td><?php echo "Work" ?></td>
-							<td><?php echo "Done" ?></td>
-							<td><?php echo "Date" ?></td>
-							<td><?php echo "Chú thích" ?></td>
-							<td>
-								<button class="btn btn-info">Chi Tiết</button>
-								<button class="btn btn-primary">Sửa</button> 
-								<button class="btn btn-danger">Xóa</button>
-							</td>
+						<td><?php echo "STT" ?></td>
+						<td><?php echo "Work" ?></td>
+						<td><?php echo "Done" ?></td>
+						<td><?php echo "Date" ?></td>
+						<td><?php echo "Chú thích" ?></td>
+						<td>
+							<button class="btn btn-info">Chi Tiết</button>
+							<button class="btn btn-primary">Sửa</button> 
+							<button class="btn btn-danger">Xóa</button>
+						</td>
 						<tr>
 							
 						</tr>
