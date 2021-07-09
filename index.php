@@ -70,14 +70,12 @@ if ($count > 0) {
 						<th>Work</th>
 						<th>Done</th>
 						<th>Date</th>
-						<th>Chú thích</th>
 						<th>Chức năng</th>							
 					</tr>
-					<td><?php echo "STT" ?></td>
+					<td><?php echo "ID" ?></td>
 					<td><?php echo "Work" ?></td>
 					<td><?php echo "Done" ?></td>
 					<td><?php echo "Date" ?></td>
-					<td><?php echo "Chú thích" ?></td>
 					<td>
 						<a href=""> <button class="btn btn-info">Chi Tiết</button> 	</a>
 						<a href=""> <button class="btn btn-primary">Sửa</button>  </a>
@@ -89,18 +87,22 @@ if ($count > 0) {
 				</thead>
 				<tbody>
 
-				<?php 
+					<?php 
 					while ($row = mysqli_fetch_array($query)) {
-				?>
+						?>
 
-					<tr>
-						<td> <?php echo $row['id']; ?> </td> 
-						<td><?php echo $row['work_content']; ?></td>
-						<td><?php echo $row['done_content']; ?></td>
-						<td><?php echo $row['work_date']; ?></td>
-					</tr>
-				
-				<?php }	?>
+						<tr>
+							<td> <?php echo $row['id']; ?> </td> 
+							<td><?php echo $row['work_content']; ?></td>
+							<td><?php echo $row['done_content']; ?></td>
+							<td><?php echo $row['work_date']; ?></td>
+							<td>
+								<a href=""> <button class="btn btn-info">Chi Tiết</button> 	</a>
+								<a href=""> <button class="btn btn-primary">Sửa</button>  </a>
+								<a href="https://vnexpress.net/"> <button class="btn btn-danger">Xóa</button> </a>
+							</td>
+						</tr>
+					<?php }	?>
 
 				</tbody>
 			</table>
