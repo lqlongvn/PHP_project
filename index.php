@@ -20,18 +20,18 @@ if ($result->num_rows > 0) {
 }
 
 echo "<br>";
-echo "Fetch cách 2", "<br>";
+echo "Fetch cách 2; Today", "<br>";
 $query = mysqli_query($conn, $sql); // câu lênh truy vấn
 $count = mysqli_num_rows($query); // đếm xem có bao nhiêu bản ghi trả ra
 if ($count > 0) {
 	echo  "Số dòng: ".$count; 
-	while ($row = mysqli_fetch_array($query)) { 
-		echo "id: " . $row["id"]. " - Work: " . $row["work_content"]. "- Done: " . $row["done_content"]." - Date:  " . $row["work_date"]. "<br>";
-	}
+	// while ($row = mysqli_fetch_array($query)) { 
+	// 	echo "id: " . $row["id"]. " - Work: " . $row["work_content"]. "- Done: " . $row["done_content"]." - Date:  " . $row["work_date"]. "<br>";
+	// }
 
 }
 
-$conn->close();
+// $conn->close();
 
 ?>
 
@@ -79,15 +79,29 @@ $conn->close();
 					<td><?php echo "Date" ?></td>
 					<td><?php echo "Chú thích" ?></td>
 					<td>
-						<button class="btn btn-info">Chi Tiết</button>
-						<button class="btn btn-primary">Sửa</button> 
-						<button class="btn btn-danger">Xóa</button>
+						<a href=""> <button class="btn btn-info">Chi Tiết</button> 	</a>
+						<a href=""> <button class="btn btn-primary">Sửa</button>  </a>
+						<a href="https://vnexpress.net/"> <button class="btn btn-danger">Xóa</button> </a>
 					</td>
 					<tr>
 						
 					</tr>
 				</thead>
 				<tbody>
+
+				<?php 
+					while ($row = mysqli_fetch_array($query)) {
+				?>
+
+					<tr>
+						<td> <?php echo $row['id']; ?> </td> 
+						<td><?php echo $row['work_content']; ?></td>
+						<td><?php echo $row['done_content']; ?></td>
+						<td><?php echo $row['work_date']; ?></td>
+					</tr>
+				
+				<?php }	?>
+
 				</tbody>
 			</table>
 		</div>
